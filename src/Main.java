@@ -20,13 +20,23 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner in = new Scanner(System.in);
 
-        int op;
+        LSEOrdenada listaLivros = new LSEOrdenada<>();
+        Livro livro;
+        String nome, id;
+        double valor = 0.0;
+        int op, estoque = 0;
         do {
             menu();
             op = in.nextInt();
             in.nextLine();
             switch (op) {
                 case 1:
+                    System.out.println("Digite o id do livro: ");
+                    id = in.nextLine();
+                    System.out.print("Informe o nome do livro: ");
+                    nome = in.nextLine();
+                    livro = new Livro(id, nome);
+                    listaLivros.inserirOrdenado(livro);
                     break;
                 case 2:
                     break;
@@ -39,6 +49,8 @@ public class Main {
                 case 6:
                     break;
                 case 7:
+                //mostrar todos os dados dos livros
+                listaLivros.exibirTodos();
                     break;
                 case 8:
                     break;

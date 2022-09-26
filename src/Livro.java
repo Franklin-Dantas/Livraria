@@ -7,8 +7,8 @@ public class Livro implements Comparable<Livro> {
 
     // Métodos construtores
 
-    public Livro(String m) {
-        this.id = m;
+    public Livro(String id) {
+        this.id = id;
     }
 
     public Livro(String id, String at) {
@@ -67,6 +67,6 @@ public class Livro implements Comparable<Livro> {
 
     @Override
     public String toString() {
-        return this.id + " " + this.autor + " " + this.valor + " " + this.estoque;
+        return "Id: " + this.id + "/n Autor:" + this.autor + " " + this.valor + " " + this.estoque;
     }
 }
