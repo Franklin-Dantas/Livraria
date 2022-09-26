@@ -23,9 +23,9 @@ public class Main {
 
         LSEOrdenada listaLivros = new LSEOrdenada();
         Livro livro;
-        String nome, id;
+        String autor, id, ttl;
         double valor = 0.0;
-        int op, estoque = 0;
+        int op, estoque = 1;
         do {
             menu();
             op = in.nextInt();
@@ -34,24 +34,45 @@ public class Main {
                 case 1:
                     System.out.println("Digite o id do livro: ");
                     id = in.nextLine();
-                    System.out.println("Informe o nome do livro: ");
-                    nome = in.nextLine();
-                    livro = new Livro(id, nome);
+                    System.out.println("Digite o nome do livro: ");
+                    ttl = in.nextLine();
+                    System.out.println("Informe o nome do autor : ");
+                    autor = in.nextLine();
+                    livro = new Livro(id, ttl, autor);
                     listaLivros.inserirOrdenado(livro);
                     break;
                 case 2:
+                    System.out.println("Informe o id do produto: ");// não funciona
+                    id = in.nextLine();
+                    listaLivros.remover(id);
                     break;
                 case 3:
+                    System.out.println("Informe o id do livro: ");
+                    id = in.nextLine();
+                    listaLivros.exibir();
                     break;
                 case 4:
+                    System.out.println("Informe o id do livro: ");
+                    id = in.nextLine();
+                    System.out.println("Informe o novo valor: ");
+                    valor = in.nextDouble();
+                    listaLivros.alterarValor(id, valor);
                     break;
                 case 5:
+                    System.out.println("Informe o id do livro: ");
+                    id = in.nextLine();
+                    System.out.println("Informe quantidade dele no estoque: ");
+                    valor = in.nextDouble();
+                    listaLivros.alterarEstoque(id, estoque);
                     break;
                 case 6:
+                    System.out.println("Informe o id do livro: ");
+                    id = in.nextLine();
+                    listaLivros.venderLivro(id, estoque);
                     break;
                 case 7:
-                //mostrar todos os dados dos livros
-                listaLivros.exibirTodos();// não está mostrando todos os resultado
+                    // mostrar todos os dados dos livros
+                    listaLivros.exibirTodos();// não está mostrando todos os resultado
                     break;
                 case 8:
                     break;
