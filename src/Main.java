@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void menu() {
-        System.out.println("     Escolha uma das opções");
         System.out.println("");
         System.out.println("01 - Cadastrar um novo livro");
         System.out.println("02 - Remover um livro do cadastro");
@@ -15,12 +14,14 @@ public class Main {
         System.out.println("");
         System.out.println("00 - Encerrar programa");
         System.out.println("");
+        System.out.println("     Escolha uma das opções: ");
+
     }
 
     public static void main(String[] args) throws Exception {
         Scanner in = new Scanner(System.in);
 
-        LSEOrdenada listaLivros = new LSEOrdenada<>();
+        LSEOrdenada listaLivros = new LSEOrdenada();
         Livro livro;
         String nome, id;
         double valor = 0.0;
@@ -33,7 +34,7 @@ public class Main {
                 case 1:
                     System.out.println("Digite o id do livro: ");
                     id = in.nextLine();
-                    System.out.print("Informe o nome do livro: ");
+                    System.out.println("Informe o nome do livro: ");
                     nome = in.nextLine();
                     livro = new Livro(id, nome);
                     listaLivros.inserirOrdenado(livro);
@@ -50,7 +51,7 @@ public class Main {
                     break;
                 case 7:
                 //mostrar todos os dados dos livros
-                listaLivros.exibirTodos();
+                listaLivros.exibirTodos();// não está mostrando todos os resultado
                     break;
                 case 8:
                     break;

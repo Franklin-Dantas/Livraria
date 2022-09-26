@@ -67,6 +67,6 @@ public class Livro implements Comparable<Livro> {
 
     @Override
     public String toString() {
-        return "Id: " + this.id + "/n Autor:" + this.autor + " " + this.valor + " " + this.estoque;
+        return "Id: " + this.id + "\nAutor: " + this.autor + ", \nValor" + this.valor + ", \nQtd Estoque: " + this.estoque;
     }
 }
