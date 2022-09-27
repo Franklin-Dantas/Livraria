@@ -67,38 +67,53 @@ public class LSEOrdenada<T extends Comparable<T>> {
         }
     }
     
-    public void remover(T id) {
-        
-        if (this.isEmpty() == true)
-            System.out.println("Lista vazia!");
-        else if (this.primeiro.getProx() == null) {
-            if (this.primeiro.getInfo().compareTo(id) == 0) {
+      public void remove(T info) {
+        LSENode<T> aux, anterior, atual;
+        if (this.isEmpty() == true)// testa se a lista ta vazia
+            System.out.println("lista vazia");
+        else if (this.qtd == 1) {// lista somente com um objeto
+            // testa pra ver se é o objeto q vai ser apagado
+            if (info.compareTo(this.primeiro.getInfo()) == 0) {
                 this.primeiro = null;
                 this.ultimo = null;
                 this.qtd = 0;
-                System.out.println("Livro removido!");
             } else
-                System.out.println("Livro não existe!");
-        } else {
-            LSENode<T> atual = this.primeiro;
-            LSENode<T> anterior = null;
-            if (this.primeiro.getInfo().compareTo(id) == 0) {
-                this.primeiro = this.primeiro.getProx();
-                System.out.println("Livro removido!");
+                System.out.println("Valor não pertence a lista");
+        } else if (info.compareTo(this.primeiro.getInfo()) == 0) {// lista com mais de um no
+            this.primeiro = this.primeiro.getProx();
+            this.qtd--;
+        } // testando se o valor passado é menor q o primeiro pra ver se ele esta na lista
+        else if (info.compareTo(this.primeiro.getInfo()) < 0)
+            System.out.println("Valor não pertence a lista");
+        // testando pra ver se o valor esta no final
+        else if (info.compareTo(this.ultimo.getInfo()) == 0) { // remoção do ultimo
+            aux = this.primeiro;
+            // loop pra deixar um aux antes do ultimo nó
+            while (aux.getProx() != this.ultimo) {
+                aux = aux.getProx();
             }
+            // removendo ultimo
+            aux.setProx(null);
+            this.ultimo = aux;
+            this.qtd--;
+        } else if (info.compareTo(this.ultimo.getInfo()) > 0) {
+            System.out.println("Valor não pertence a lista");
+        } else {// testando pra ver se o valor esta no "meio" da lista
+            anterior = null;
+            atual = this.primeiro;
             while (atual != null) {
-                if (atual.getInfo().compareTo(id) == 0) {
+                if (info.compareTo(atual.getInfo()) == 0) {// achou e remove
                     anterior.setProx(atual.getProx());
-                    System.out.println("Livro removido!");
                     this.qtd--;
-                    return;
-                }
-                if (atual.getInfo().compareTo(id) > 0) {
-                    System.out.println("Livro não existe!");
+                    break;
+                }else if(info.compareTo(atual.getInfo()) < 0){//testando se vai ter um maior pra sair e se pertence a lista
+                    System.out.println("Valor não pertence a lista");
                     break;
                 }
-                anterior = atual;
-                atual = atual.getProx();
+                else {
+                    anterior = atual;
+                    atual = atual.getProx();
+                }
             }
         }
     }
