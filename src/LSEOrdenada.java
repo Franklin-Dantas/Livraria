@@ -3,8 +3,7 @@ public class LSEOrdenada<T extends Comparable<T>> {
     private LSENode<T> ultimo;
     private int qtd;
 
-    ///////////////////////////////////////////////// Métodos
-    ///////////////////////////////////////////////// /////////////////////////////////////
+    ///////////////////////////////////////////////// Métodos //////////////////////////////////////////////////////////////////////////////////////
 
     public boolean isEmpty() {
         if (this.primeiro == null && this.ultimo == null && this.qtd == 0) { // testando todas possibilidades
@@ -116,6 +115,7 @@ public class LSEOrdenada<T extends Comparable<T>> {
         else if (this.primeiro.getInfo().compareTo((T) aux) == 0) {
             this.primeiro = null;
             System.out.println("Livro removido!");
+
         } else {
             LSENode aux1 = this.primeiro;
             LSENode penultimo = aux1;

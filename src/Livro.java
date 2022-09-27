@@ -58,8 +58,8 @@ public class Livro implements Comparable<Livro> {
         this.id = id;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setTitulo(String ttl) {
+        this.titulo = ttl;
     }
 
     public void setAutor(String autor) {

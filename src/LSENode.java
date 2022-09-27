@@ -7,8 +7,8 @@ public class LSENode<T extends Comparable<T>> {
     private T info;
     private LSENode<T> prox;
 
-    public LSENode(T valor) {
-        this.info = valor;
+    public LSENode(T info) {
+        this.info = info;
     }
 
     public void setInfo(T valor) {
