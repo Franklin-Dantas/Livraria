@@ -47,3 +47,68 @@ não pertence à lista. OBS: Ao procurar o item para remoção, utilize a lógic
 busca sequencial melhorada.
 
 (e) Função para testar se a lista está vazia.
+
+/* 
+    public void alterarValor(String id, double valor) {
+
+        // altera a valor de um Livro
+        if (this.isEmpty() == true) {
+            System.out.println("Lista vazia!");
+        } else {
+            Livro aux = new Livro(id, valor);
+            this.primeiro = buscar(aux);
+            aux = (Livro) this.primeiro.getInfo();
+            System.out.println(this.primeiro.getInfo());
+        }
+        }
+
+    public void venderLivro(String id, int estoque) {
+        // altera a quantidade do estoque de um Livro
+        if (this.isEmpty() == true) {
+            System.out.println("Lista vazia!");
+        } else {
+            Livro aux = new Livro(id, estoque);
+            this.primeiro = buscar(aux);
+            aux = (Livro) this.primeiro.getInfo();
+            System.out.println(this.primeiro.getInfo());
+        }
+    }
+
+    public void alterarEstoque(String id, int estoque) {
+        // altera a quantidade do estoque de um Livro
+        if (this.isEmpty() == true) {
+            System.out.println("Lista vazia!");
+        } else {
+            Livro aux = new Livro(id, estoque);
+            this.primeiro = buscar(aux);
+            aux = (Livro) this.primeiro.getInfo();
+            aux.setEstoque(estoque);
+        }
+    }
+    public Aluno copiarLivro(){
+        Livro novo = new Livro (this.id, this.titulo, this.autor, this.valor, this.estoque);
+        return novo
+    }
+    public LSEOredenada criarUniao (LSEOredenada outra){
+        LSEOredenada listaUniao = new LSEOredenada();
+        LSENode<T> aux;
+        Livro original,copia;
+
+        aux = this.primeiro;
+        while (aux != null){
+            original = aux.getInfo();
+            copia = original.copiarLivro();
+            listaUniao.inserirLivroFinal(copia);
+            aux =aux.getProx();
+        }
+        aux = outra.primeiro;
+        while (aux != null){
+            original = aux.getInfo();
+            copia = original.copiarLivro();
+            listaUniao.inserirLivroFinal(copia);
+            aux = aux.getProx();
+        }
+    }
+    return listaUniao;
+}
+    */
