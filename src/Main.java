@@ -45,7 +45,7 @@ public class Main {
                     System.out.println("Informe o id do produto: ");
                     id = in.nextLine();
                     Livro l2 = new Livro(id);
-                    listaLivros.remover(l2);
+                    listaLivros.remove(l2);
                     break;
                 case 3:
                     System.out.println("Informe o id do livro: ");
