@@ -4,8 +4,8 @@ public class Livro implements Comparable<Livro> {
     private String id;
     private String titulo;
     private String autor;
-    private double valor;
-    private int estoque;
+    private double valor = 0.0;
+    private int estoque = 1;
 
     // Métodos construtores
 
@@ -13,23 +13,23 @@ public class Livro implements Comparable<Livro> {
         this.id = id;
     }
 
-    public Livro(String id, double vl) {
+    public Livro(String id, double valor) {
         this.id = id;
-        this.valor = vl;
+        this.valor = valor;
     }
 
-    public Livro(String id, String ttl, String at) {
+    public Livro(String id, String titulo, String autor) {
         this.id = id;
-        this.id = ttl;
-        this.autor = at;
+        this.titulo = titulo;
+        this.autor = autor;
     }
 
-    public Livro(String id, String ttl, String at, double vl, int stq) {
+    public Livro(String id, String titulo, String autor, double valor, int estoque) {
         this.id = id;
-        this.id = ttl;
-        this.autor = at;
-        this.valor = vl;
-        this.estoque = stq;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.valor = valor;
+        this.estoque = estoque;
     }
 
     // Métodos GET
@@ -58,8 +58,8 @@ public class Livro implements Comparable<Livro> {
         this.id = id;
     }
 
-    public void setTitulo(String ttl) {
-        this.titulo = ttl;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public void setAutor(String autor) {
@@ -77,7 +77,6 @@ public class Livro implements Comparable<Livro> {
     // Método para comparar dois livros pela id
     @Override
     public int compareTo(Livro livro) {
-
         int result;
         result = this.getId().compareTo(livro.getId());
         return result;
@@ -85,7 +84,11 @@ public class Livro implements Comparable<Livro> {
 
     @Override
     public String toString() {
-        return "Id: " + this.id + "\nTítulo: " + this.titulo + "\nAutor: " + this.autor + " \nValor: " + this.valor
-                + " \nQtd Estoque: " + this.estoque;
+        return " Id: " + this.id + 
+        "\n Título: " + this.titulo + 
+        "\n Autor: " + this.autor + 
+        "\n Valor: " + this.valor + 
+        "\n Qtd Estoque: " + this.estoque+
+        "\n";
     }
 }

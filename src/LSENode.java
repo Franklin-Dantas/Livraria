@@ -4,6 +4,7 @@
 // Este T tem que ser uma classe é Comparable, ou seja, uma classe que implementa o método compareTo
 
 public class LSENode<T extends Comparable<T>> {
+    
     private T info;
     private LSENode<T> prox;
 
@@ -11,19 +12,20 @@ public class LSENode<T extends Comparable<T>> {
         this.info = info;
     }
 
-    public void setInfo(T valor) {
-        this.info = valor;
-    }
-
     public T getInfo() {
-        return this.info;
+        return info;
     }
 
-    public void setProx(LSENode<T> novoProx) {
-        this.prox = novoProx;
+    public void setInfo(T info) {
+        this.info = info;
     }
 
     public LSENode<T> getProx() {
-        return this.prox;
+        return prox;
     }
+
+    public void setProx(LSENode<T> prox) {
+        this.prox = prox;
+    }
+
 }
